@@ -10,6 +10,8 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@nextui-org/accordion": "^2.2.5",
+		"@nextui-org/alert": "^2.2.7",
 		"@nextui-org/button": "2.2.3",
 		"@nextui-org/card": "^2.2.7",
 		"@nextui-org/code": "2.2.3",

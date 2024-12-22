@@ -13,9 +13,10 @@ export default function DefaultLayout({
       </main>
       <footer className="w-full flex items-center justify-center py-3">
         <span className="flex items-center gap-1 text-current">
-          <span className="text-default-600">Crée par</span>
+            <span className="text-default-600">{new Date().getFullYear()}</span>
+          <span className="text-default-600"> - Crée par</span>
           <p className="text-secondary">Aurélie Moustardier</p>
-          <p className="text-default-600"> avec NextUI</p>
+          <p className="text-default-600">tout droits réservés.</p>
         </span>
       </footer>
     </div>

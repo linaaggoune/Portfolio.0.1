@@ -52,7 +52,7 @@ export default function ProjectsPage() {
               />
             </CardBody>
             <CardFooter className="flex justify-center items-center w-full pt-5">
-              <Button onPress={modal1.onOpen}>Détails</Button>
+              <Button onPress={modal4.onOpen} color={"secondary"} variant={"ghost"}>Détails</Button>
               <ModalProjectOne
                 isOpen={modal1.isOpen}
                 onOpenChange={modal1.onOpenChange}
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
               />
             </CardBody>
             <CardFooter className="flex justify-center items-center w-full pt-5">
-              <Button onPress={modal2.onOpen}>Détails</Button>
+              <Button onPress={modal4.onOpen} color={"secondary"} variant={"ghost"}>Détails</Button>
               <ModalProjectTwo
                 isOpen={modal2.isOpen}
                 onOpenChange={modal2.onOpenChange}
@@ -113,7 +113,7 @@ export default function ProjectsPage() {
               />
             </CardBody>
             <CardFooter className="flex justify-center items-center w-full pt-5">
-              <Button onPress={modal3.onOpen}>Détails</Button>
+              <Button onPress={modal4.onOpen} color={"secondary"} variant={"ghost"}>Détails</Button>
               <ModalProjectThree
                 isOpen={modal3.isOpen}
                 onOpenChange={modal3.onOpenChange}
@@ -143,7 +143,7 @@ export default function ProjectsPage() {
               />
             </CardBody>
             <CardFooter className="flex justify-center items-center w-full pt-5">
-              <Button onPress={modal4.onOpen}>Détails</Button>
+              <Button onPress={modal4.onOpen} color={"secondary"} variant={"ghost"}>Détails</Button>
               <ModalProjectFour
                 isOpen={modal4.isOpen}
                 onOpenChange={modal4.onOpenChange}
