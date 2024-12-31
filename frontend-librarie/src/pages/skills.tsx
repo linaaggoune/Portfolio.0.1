@@ -1,71 +1,47 @@
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
-import {Popover, PopoverContent, PopoverTrigger} from "@nextui-org/popover";
-import {Button} from "@nextui-org/button";
-import {IoLogoReact} from "react-icons/io5";
-import {BiLogoTypescript} from "react-icons/bi";
+import FrontEnd from "@/components/frontend.tsx";
+import Backend from "@/components/backend.tsx";
+import Database from "@/components/bdd.tsx";
+import Outilsdev from "@/components/outilsdev.tsx";
+import SoftSkills from "@/components/softskills.tsx";
 
 export default function SkillsPage() {
 
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center justify-center w-full gap-6">
-        <div className="inline-block max-w-lg text-center justify-center">
+      <section className="flex flex-col items-center justify-center w-full gap-20">
+        <div className="inline-block max-w-lg text-center justify-center pt-5">
           <h1 className={title()}>Mes skills</h1>
         </div>
         <div className="flex flex-col w-full gap-6 items-start pt-10">
           <span className={title({size: "sm"})}>
-            FrontEnd
+            Front
           </span>
-          <div className="flex gap-2 pt-3 pb-4">
-            <Popover placement="bottom">
-              <PopoverTrigger>
-                <Button
-                  color={"secondary"}>
-                  React
-                  <IoLogoReact />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent>
-                <div className="px-1 py-2">
-                  <div className="text-small font-bold">Formation CDA*</div>
-                  <div className="text-tiny">2024 - 2026 à l'école d'Oclock</div>
-                </div>
-              </PopoverContent>
-            </Popover>
-            <Popover placement="bottom">
-              <PopoverTrigger>
-                <Button
-                color={"primary"}>
-                  TypeScript
-                  <BiLogoTypescript/>
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent>
-                <div className="px-1 py-2">
-                  <div className="text-small font-bold">Formation CDA*</div>
-                  <div className="text-tiny">École O'Clock</div>
-                  <div className="text-tiny">En entreprise</div>
-                </div>
-              </PopoverContent>
-            </Popover>
-          </div>
+          <FrontEnd/>
+
           {/* Faire des popover sur les différentes technologies avec l'endroit où j'ai appris */}
           <span className={title({size: "sm"})}>
-            BackEnd
+            Back
           </span>
+          <Backend />
+
           <span className={title({size: "sm"})}>
-            Base de données
+            Bases de données
           </span>
+          <Database />
+
           <span className={title({size: "sm"})}>
             Outils de développement
           </span>
+          <Outilsdev />
           <span className={title({size: "sm"})}>
-            Soft Skills
+            Compétences professionnelles
           </span>
+          <SoftSkills />
         </div>
         <span>
-          *CDA correspond à la formation Concepteur Développeur d'Application, équivalent à un bac+4
+          *Concepteur Développeur d&#39;Application
         </span>
       </section>
     </DefaultLayout>

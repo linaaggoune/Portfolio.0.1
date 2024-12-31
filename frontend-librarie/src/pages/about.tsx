@@ -17,16 +17,16 @@ export default function AboutPage() {
             <p className="text-justify pb-4">
               Après cinq années enrichissantes en tant que diététicienne, où j’ai pu accompagner de nombreuses
               personnes
-              dans leur bien-être, j’ai découvert une nouvelle passion : le développement web. Cette révélation m'a
+              dans leur bien-être, j’ai découvert une nouvelle passion : le développement web. Cette révélation m&#39;a
               conduite à réorienter ma carrière vers le domaine du numérique, un secteur en constante évolution, qui
               correspond à ma curiosité et à mon goût pour les nouvelles technologies.
             </p>
             <p className="text-justify pb-4">
-              Actuellement en formation pour obtenir un titre professionnel équivalent bac+3/4 en
-              <span className="font-bold"> Conception et développement d'applications</span>,
+              Actuellement en formation pour obtenir un titre professionnel équivalent bac+4 en
+              <span className="font-bold"> Conception et développement d&#39;applications</span>,
               je poursuis cet objectif en alternance chez
               <span className="font-bold"> Filieris</span>
-              , au sein de la DSI d'Alès, où je
+              , au sein de la DSI d&#39;Alès, où je
               suis engagée jusqu’en juillet 2026. Cette opportunité me permet de combiner apprentissage théorique et
               pratique tout en contribuant à des projets concrets au sein d’une équipe dynamique.
             </p>
@@ -39,9 +39,10 @@ export default function AboutPage() {
             </p>
             <div className="flex gap-10 pt-3">
               <Button as={Link}
-                  color="secondary"
-                  variant="solid"
-                  href='/skills/'>
+                color="secondary"
+                variant="solid"
+                href="/skills/"
+              >
                 Mes Skills
               </Button>
               <Button
@@ -58,7 +59,7 @@ export default function AboutPage() {
               isBlurred
             alt="NextUI Album Cover"
             className="m-5"
-            src="https://nextui.org/images/album-cover.png"
+            src="../../public/about.jpeg"
             width={320}
           />
         </div>
