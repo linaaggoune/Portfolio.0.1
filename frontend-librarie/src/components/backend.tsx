@@ -7,7 +7,7 @@ import { DiPython} from "react-icons/di";
 export default function Backend() {
   return (
     <>
-      <div className="flex gap-2 pt-6 pb-12 w-full justify-center">
+      <div className="flex gap-2 pb-5 w-full justify-center">
         <Popover placement="bottom">
           <PopoverTrigger>
             <Button className={"bg-blue-500 text-white"}>

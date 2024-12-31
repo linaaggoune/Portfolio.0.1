@@ -6,7 +6,7 @@ import {SiGithubactions} from "react-icons/si";
 export default function Outilsdev() {
   return (
     <>
-      <div className="flex gap-2 pt-6 pb-12 w-full justify-center">
+      <div className="flex gap-2 pb-5 w-full justify-center">
         <Popover placement="bottom">
           <PopoverTrigger>
             <Button color="primary">

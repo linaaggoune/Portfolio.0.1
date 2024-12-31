@@ -9,7 +9,7 @@ import { DiBootstrap } from "react-icons/di";
 export default function FrontEnd() {
   return (
     <>
-      <div className="flex gap-2 pt-6 pb-12 w-full justify-center">
+      <div className="flex gap-2 pt-6 pb-5 w-full justify-center">
         <Popover placement="bottom">
           <PopoverTrigger>
             <Button className={"bg-orange-500"}>
