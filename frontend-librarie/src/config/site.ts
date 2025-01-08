@@ -5,11 +5,11 @@ export const siteConfig = {
   description: "Bienvenu sur mon portfolio.",
   navItems: [
     {
-      label: "Home",
+      label: "Accueil",
       href: "/",
     },
     {
-      label: "About",
+      label: "À propos",
       href: "/about",
     },
     {
@@ -17,7 +17,7 @@ export const siteConfig = {
       href: "/skills",
     },
     {
-      label: "Project",
+      label: "Mes projets",
       href: "/projects",
     },
     {
@@ -26,40 +26,7 @@ export const siteConfig = {
     },
 
   ],
-  navMenuItems: [
-    {
-      label: "Profile",
-      href: "/profile",
-    },
-    {
-      label: "Dashboard",
-      href: "/dashboard",
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
-    },
-  ],
+  navMenuItems: [],
   links: {
     github: "https://github.com/AurelieMous",
     linkedin: "https://www.linkedin.com/in/aur%C3%A9lie-moustardier-7393672b2/",

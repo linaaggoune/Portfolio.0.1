@@ -6,6 +6,9 @@ import {
   ModalHeader,
 } from "@nextui-org/modal";
 import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/link";
+import { button as buttonStyles } from "@nextui-org/theme";
+import { GithubIcon } from "@/components/icons.tsx";
 
 interface IModalProject {
   isOpen: boolean; // Renommé de isOpenModal1
@@ -19,14 +22,33 @@ const ModalProjectOne: React.FC<IModalProject> = ({ isOpen, onOpenChange }) => {
         {(onClose) => (
           <>
             <ModalHeader className="flex flex-col gap-1">Portfolio</ModalHeader>
-            <ModalBody>
+            <ModalBody className="text-justify">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non risus hendrerit venenatis. Pellentesque sit
-                amet hendrerit risus, sed porttitor quam.
+                Réalisé avec React et TypeScript suite à mes connaissances
+                développer développer pendant ma formation de Concepteur
+                Développeur d&#39;Application.
+              </p>
+              <p>
+                Mise en place également d&#39;un workflow, à l&#39;aide de
+                GitHubAction afin de bénéficier d&#39;une intégration et
+                déploiement continue.
+              </p>
+              <p>
+                Utilisation de NextUI pour l&#39;interface utilisateur du projet.
               </p>
             </ModalBody>
             <ModalFooter>
+              <Link
+                isExternal
+                className={buttonStyles({
+                  variant: "bordered",
+                  radius: "full",
+                })}
+                href={"https://github.com/AurelieMous/portfolio-react"}
+              >
+                <GithubIcon size={20} />
+                Mon repo
+              </Link>
               <Button color="danger" variant="light" onPress={onClose}>
                 Fermer
               </Button>

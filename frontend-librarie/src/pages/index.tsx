@@ -35,7 +35,7 @@ export default function IndexPage() {
 
         <div className="flex gap-3 pt-10">
           <Button as={Link} color="secondary" href="/about/" variant="ghost">
-            About me
+            A propos
           </Button>
           <Button
             showAnchorIcon
@@ -43,6 +43,7 @@ export default function IndexPage() {
             color="secondary"
             href="https://oclock.io/formations/cda-alternance"
             variant="solid"
+            target="_blank"
           >
             Ma formation
           </Button>
