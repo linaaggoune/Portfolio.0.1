@@ -1,57 +1,32 @@
-name: Deploy to GitHub Pages
+name: Deploy Portfolio to GitHub Pages
 
 on:
   push:
     branches:
       - master
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-
-  id-token: write
 
 jobs:
-  # Job pour construire le projet
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      # Étape pour récupérer le code du dépôt
-      - name: Checkout
-        uses: actions/checkout@v4.2.2
-
-      # Étape pour configurer Node.js
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4.1.0
-        with:
-          node-version: 16  # Assurez-vous que la version correspond à celle requise par Vite
-
-      # Étape pour installer les dépendances
-      - name: Install dependencies
-        run: npm ci
-
-      # Étape pour construire le projet avec Vite
-      - name: Build the project
-        run: npm run build
-
-      # Étape pour uploader les artefacts générés
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3.0.1
-        with:
-          path: dist  # Vite génère le site statique dans le dossier `dist`
-
-  # Job pour déployer les artefacts sur GitHub Pages
   deploy:
-    needs: build
     runs-on: ubuntu-latest
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      # Étape pour déployer le site sur GitHub Pages
-      - name: Deploy GitHub Pages site
-        id: deployment
-        uses: actions/deploy-pages@v4.0.5
+      # Étape 1 : Cloner le dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Étape 2 : Installer les dépendances (si nécessaire, par ex. pour React ou Next.js)
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # Étape 3 : Construire le projet
+      - name: Build the project
+        run: |
+          npm run build
+
+      # Étape 4 : Déployer sur GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # Chemin vers le dossier contenant les fichiers statiques
