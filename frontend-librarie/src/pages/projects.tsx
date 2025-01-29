@@ -12,12 +12,15 @@ import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import ModalProjectTwo from "@/components/modals/modalProjectTwo.tsx";
 import ModalProjectThree from "@/components/modals/modalProjectThree.tsx";
+import {useMediaQueryPersonnalise} from "@/context/mediaQueryContext.tsx";
 
 export default function ProjectsPage() {
   // Déplacer les useDisclosure en dehors du ParentComponent
   const modal1 = useDisclosure();
   const modal2 = useDisclosure();
   const modal3 = useDisclosure();
+
+  const {isDesktopOrLaptop} = useMediaQueryPersonnalise();
   // const modal4 = useDisclosure();
 
   return (
@@ -26,7 +29,7 @@ export default function ProjectsPage() {
         <div className="flex items-center justify-center">
           <h1 className={title()}>Mes Projets</h1>
         </div>
-        <div className="pt-10 flex gap-10">
+        <div className={ isDesktopOrLaptop ? "pt-10 flex gap-10" : " flex pt-10 flex-col gap-10"}>
           {/* Première carte */}
           <Card className="py-4">
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">

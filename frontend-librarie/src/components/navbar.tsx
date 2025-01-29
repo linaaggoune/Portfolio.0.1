@@ -16,6 +16,8 @@ import { FaLinkedin } from 'react-icons/fa';
 
 export const Navbar = () => {
 
+    //const {isDesktopOrLaptop} = useMediaQueryPersonnalise();
+
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">

@@ -4,15 +4,19 @@ import { Link } from "@heroui/link";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
+import {useMediaQueryPersonnalise} from "@/context/mediaQueryContext.tsx";
 
 export default function AboutPage() {
+
+  const { isDesktopOrLaptop } = useMediaQueryPersonnalise();
+
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center md:py-3">
         <div className="inline-block max-w-lg text-center justify-center">
           <h1 className={title()}>À propos</h1>
         </div>
-        <div className="flex items-center justify-center gap-20 py-8 md:py-10">
+        <div className={isDesktopOrLaptop ? "flex items-center justify-center gap-20 py-8 md:py-10" : "flex w-full flex-col items-center justify-center gap-20"}>
           <div className="mt-8 w-1/2">
             <h2 className="text-3xl pb-4">Une nouvelle aventure ...</h2>
             <p className="text-justify pb-4">

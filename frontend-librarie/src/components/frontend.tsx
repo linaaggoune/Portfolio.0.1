@@ -5,11 +5,15 @@ import { BiLogoCss3, BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { IoLogoReact } from "react-icons/io5";
 import { SiSass, SiTailwindcss } from "react-icons/si";
 import { DiBootstrap } from "react-icons/di";
+import {useMediaQueryPersonnalise} from "@/context/mediaQueryContext.tsx";
 
 export default function FrontEnd() {
+
+  const {isDesktopOrLaptop} = useMediaQueryPersonnalise();
+
   return (
     <>
-      <div className="flex gap-2 pt-6 pb-5 w-full justify-center">
+      <div className={isDesktopOrLaptop ? "flex gap-2 pt-6 pb-5 w-full justify-center" : "flex row-auto gap-2 pt-6 pb-5 w-full justify-center"}>
         <Popover placement="bottom">
           <PopoverTrigger>
             <Button className={"bg-orange-500"}>

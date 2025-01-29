@@ -8,6 +8,9 @@ import System from "@/components/system.tsx";
 import Ide from "@/components/ide.tsx";
 
 export default function SkillsPage() {
+
+
+
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center w-full gap-20">
