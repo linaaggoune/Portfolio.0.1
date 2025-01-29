@@ -6,8 +6,11 @@ import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
+import { useMediaQueryPersonnalise } from "@/context/mediaQueryContext";
 
 export default function IndexPage() {
+  const { isDesktopOrLaptop } = useMediaQueryPersonnalise();
+
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -21,7 +24,12 @@ export default function IndexPage() {
               color="foreground"
               href="/skills/"
               size="lg"
-              style={{ fontSize: "3rem", margin: "1rem", cursor: "pointer", textDecoration: "underline" }}
+              style={{
+                fontSize: "3rem",
+                margin: "1rem",
+                cursor: "pointer",
+                textDecoration: "underline",
+              }}
             >
               full-stack
             </Link>
@@ -33,7 +41,11 @@ export default function IndexPage() {
           </div>
         </div>
 
-        <div className="flex gap-3 pt-10">
+        <div
+          className={
+            isDesktopOrLaptop ? "flex gap-3 pt-10" : "flex flex-col gap-3 pt-10"
+          }
+        >
           <Button as={Link} color="secondary" href="/about/" variant="ghost">
             A propos
           </Button>
@@ -42,8 +54,8 @@ export default function IndexPage() {
             as={Link}
             color="secondary"
             href="https://oclock.io/formations/cda-alternance"
-            variant="solid"
             target="_blank"
+            variant="solid"
           >
             Ma formation
           </Button>
