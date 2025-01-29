@@ -1,5 +1,5 @@
-import { Popover, PopoverContent, PopoverTrigger } from "@nextui-org/popover";
-import { Button } from "@nextui-org/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@heroui/popover";
+import { Button } from "@heroui/button";
 import { BiLogoNodejs } from "react-icons/bi";
 import { SiDjango } from "react-icons/si";
 import { DiPython} from "react-icons/di";

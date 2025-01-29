@@ -1,11 +1,11 @@
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import { Image } from "@nextui-org/image";
+import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
+import { Image } from "@heroui/image";
 import { IoLogoReact } from "react-icons/io5";
 import {FaCss3Alt, FaHtml5} from "react-icons/fa";
 import {SiNextui, SiTailwindcss, SiVite} from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
-import { Button } from "@nextui-org/button";
-import { useDisclosure } from "@nextui-org/modal";
+import { Button } from "@heroui/button";
+import { useDisclosure } from "@heroui/modal";
 
 import ModalProjectOne from "@/components/modals/modalProjectOne.tsx";
 import DefaultLayout from "@/layouts/default";

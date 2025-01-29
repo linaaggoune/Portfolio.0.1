@@ -4,10 +4,10 @@ import {
   ModalContent,
   ModalFooter,
   ModalHeader,
-} from "@nextui-org/modal";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
-import { button as buttonStyles } from "@nextui-org/theme";
+} from "@heroui/modal";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
+import { button as buttonStyles } from "@heroui/theme";
 import { GithubIcon } from "@/components/icons.tsx";
 
 interface IModalProject {

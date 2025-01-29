@@ -1,5 +1,5 @@
-import { Popover, PopoverContent, PopoverTrigger } from "@nextui-org/popover";
-import { Button } from "@nextui-org/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@heroui/popover";
+import { Button } from "@heroui/button";
 import { FaHtml5 } from "react-icons/fa";
 import { BiLogoCss3, BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { IoLogoReact } from "react-icons/io5";

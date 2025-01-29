@@ -1,6 +1,6 @@
-import { Image } from "@nextui-org/image";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
+import { Image } from "@heroui/image";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";

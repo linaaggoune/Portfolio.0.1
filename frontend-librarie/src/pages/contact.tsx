@@ -1,6 +1,6 @@
-import { Button } from "@nextui-org/button";
-import { Form } from "@nextui-org/form";
-import { Input, Textarea } from "@nextui-org/input";
+import { Button } from "@heroui/button";
+import { Form } from "@heroui/form";
+import { Input, Textarea } from "@heroui/input";
 import { useState } from "react";
 
 import DefaultLayout from "@/layouts/default";
