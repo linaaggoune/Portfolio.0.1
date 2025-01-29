@@ -17,6 +17,7 @@ jobs:
       # Étape 2 : Installer les dépendances (si nécessaire, par ex. pour React ou Next.js)
       - name: Install dependencies
         run: |
+          cd /frontend-librairie/
           npm install
 
       # Étape 3 : Construire le projet

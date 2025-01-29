@@ -41,13 +41,13 @@ export default function AboutPage() {
               pratique tout en contribuant à des projets concrets au sein d’une
               équipe dynamique.
             </p>
-            <p className="text-justify pb-4 italic text-blue-800">
-              Je suis particulièrement motivée par les défis qu’offre cette
+            <p className="text-justify pb-4 italic">
+              ＂Je suis particulièrement motivée par les défis qu’offre cette
               reconversion. Mon esprit créatif et mon approche analytique,
               développés au fil de ma première carrière, me poussent à innover
               dans la conception de solutions web. Je suis impatiente de
               contribuer à des projets ambitieux tout en continuant à me
-              perfectionner dans ce domaine.
+              perfectionner dans ce domaine.＂
             </p>
             <div className="flex gap-10 pt-3 justify-center">
               <Button
