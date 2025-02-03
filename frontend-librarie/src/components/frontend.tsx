@@ -5,135 +5,84 @@ import { BiLogoCss3, BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { IoLogoReact } from "react-icons/io5";
 import { SiSass, SiTailwindcss } from "react-icons/si";
 import { DiBootstrap } from "react-icons/di";
-import {useMediaQueryPersonnalise} from "@/context/mediaQueryContext.tsx";
 
 export default function FrontEnd() {
-
-  const {isDesktopOrLaptop} = useMediaQueryPersonnalise();
+  const skills = [
+    {
+      name: "HTML5",
+      color: "bg-orange-500",
+      icon: <FaHtml5 />,
+      learning: "En autodidacte",
+      source: "Cours en ligne",
+    },
+    {
+      name: "CSS3",
+      color: "bg-blue-500",
+      icon: <BiLogoCss3 />,
+      learning: "En autodidacte",
+      source: "Cours en ligne",
+    },
+    {
+      name: "JavaScript",
+      color: "bg-yellow-500",
+      icon: <BiLogoJavascript />,
+      learning: "En autodidacte",
+      source: "Cours en ligne",
+    },
+    {
+      name: "React",
+      color: "bg-blue-400",
+      icon: <IoLogoReact />,
+      learning: "Formation CDA*",
+      source: "École O'Clock",
+    },
+    {
+      name: "TypeScript",
+      color: "bg-blue-600",
+      icon: <BiLogoTypescript />,
+      learning: "Formation CDA*",
+      source: "École O'Clock / En entreprise",
+    },
+    {
+      name: "Sass",
+      color: "bg-pink-500 text-white",
+      icon: <SiSass />,
+      learning: "Formation CDA*",
+      source: "École O'Clock",
+    },
+    {
+      name: "Bootstrap",
+      color: "bg-purple-500",
+      icon: <DiBootstrap />,
+      learning: "Formation CDA*",
+      source: "En entreprise",
+    },
+    {
+      name: "Tailwind",
+      color: "bg-teal-500",
+      icon: <SiTailwindcss />,
+      learning: "Formation CDA*",
+      source: "École O'Clock",
+    },
+  ];
 
   return (
-    <>
-      <div className={isDesktopOrLaptop ? "flex gap-2 pt-6 pb-5 w-full justify-center" : "flex row-auto gap-2 pt-6 pb-5 w-full justify-center"}>
-        <Popover placement="bottom">
+    <div className="flex flex-wrap justify-center gap-2 pt-6 pb-5 w-full">
+      {skills.map(({ name, color, icon, learning, source }) => (
+        <Popover key={name} className="relative" placement="bottom">
           <PopoverTrigger>
-            <Button className={"bg-orange-500"}>
-              HTML5
-              <FaHtml5 />
+            <Button
+              className={`${color} flex items-center gap-2 px-4 py-2 rounded-lg text-white`}
+            >
+              {name} {icon}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">En autodidacte</div>
-              <div className="text-tiny">Cours en ligne</div>
-            </div>
+            <div className="text-small font-bold">{learning}</div>
+            <div className="text-tiny">{source}</div>
           </PopoverContent>
         </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button color={"primary"}>
-              CSS3
-              <BiLogoCss3 />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">En autodidacte</div>
-              <div className="text-tiny">Cours en ligne</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button className={"bg-yellow-500"}>
-              JavaScript
-              <BiLogoJavascript />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">En autodidacte</div>
-              <div className="text-tiny">Cours en ligne</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button color={"secondary"}>
-              React
-              <IoLogoReact />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">École O&#39;Clock</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button color={"primary"}>
-              TypeScript
-              <BiLogoTypescript />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">École O&#39;Clock</div>
-              <div className="text-tiny">En entreprise</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button className="bg-pink-500 text-white">
-              Sass
-              <SiSass />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">École O&#39;Clock</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button color={"secondary"}>
-              Bootstrap
-              <DiBootstrap />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">En entreprise</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button color={"primary"}>
-              Tailwind
-              <SiTailwindcss />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">École O&#39;Clock</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }

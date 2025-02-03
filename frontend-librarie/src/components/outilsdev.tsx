@@ -1,41 +1,43 @@
 import { Popover, PopoverContent, PopoverTrigger } from "@heroui/popover";
 import { Button } from "@heroui/button";
 import { FaDocker } from "react-icons/fa";
-import {SiGithubactions} from "react-icons/si";
+import { SiGithubactions } from "react-icons/si";
 
 export default function Outilsdev() {
+  const skills = [
+    {
+      name: "Docker",
+      color: "bg-blue-500",
+      icon: <FaDocker />,
+      learning: "Formation CDA*",
+      source: "École O'Clock",
+    },
+    {
+      name: "GitHub Action",
+      color: "bg-blue-300",
+      icon: <SiGithubactions />,
+      learning: "Formation CDA*",
+      source: "École O'Clock",
+    },
+  ];
+
   return (
-    <>
-      <div className="flex gap-2 pb-5 w-full justify-center">
-        <Popover placement="bottom">
+    <div className="flex flex-wrap justify-center gap-2 pt-6 pb-5 w-full">
+      {skills.map(({ name, color, icon, learning, source }) => (
+        <Popover key={name} className="relative" placement="bottom">
           <PopoverTrigger>
-            <Button color="primary">
-              Docker
-              <FaDocker />
+            <Button
+              className={`${color} flex items-center gap-2 px-4 py-2 rounded-lg text-white`}
+            >
+              {name} {icon}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">École O&#39;Clock</div>
-            </div>
+            <div className="text-small font-bold">{learning}</div>
+            <div className="text-tiny">{source}</div>
           </PopoverContent>
         </Popover>
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button className={"bg-blue-200 "}>
-              GitHub Action
-              <SiGithubactions />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">École O&#39;Clock</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }

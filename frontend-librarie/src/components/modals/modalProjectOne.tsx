@@ -24,17 +24,13 @@ const ModalProjectOne: React.FC<IModalProject> = ({ isOpen, onOpenChange }) => {
             <ModalHeader className="flex flex-col gap-1">Portfolio</ModalHeader>
             <ModalBody className="text-justify">
               <p>
-                Réalisé avec React et TypeScript suite à mes connaissances
-                développer développer pendant ma formation de Concepteur
-                Développeur d&#39;Application.
+                Réalisé avec React et TypeScript, en mettant à profit les connaissances acquises lors de ma formation de Concepteur Développeur d&#39;Application.
               </p>
               <p>
-                Mise en place également d&#39;un workflow, à l&#39;aide de
-                GitHubAction afin de bénéficier d&#39;une intégration et
-                déploiement continue.
+                Mise en place également d&#39;un workflow à l&#39;aide de GitHub Actions afin de bénéficier d&#39;une intégration et d&#39;un déploiement continus.
               </p>
               <p>
-                Utilisation de NextUI pour l&#39;interface utilisateur du projet.
+                Utilisation de HeroUi pour l&#39;interface utilisateur du projet.
               </p>
             </ModalBody>
             <ModalFooter>

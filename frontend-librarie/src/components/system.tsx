@@ -1,56 +1,49 @@
 import { Popover, PopoverContent, PopoverTrigger } from "@heroui/popover";
 import { Button } from "@heroui/button";
-import {FaApple, FaLinux, FaWindows} from "react-icons/fa";
+import { FaApple, FaLinux, FaWindows } from "react-icons/fa";
 
 export default function System() {
+  const skills = [
+    {
+      name: "MacOS",
+      color: "bg-black text-white",
+      icon: <FaApple />,
+      learning: "En autodidacte et formation CDA*",
+      source: "École O'Clock",
+    },
+    {
+      name: "Windows",
+      color: "bg-blue-500 text-white",
+      icon: <FaWindows />,
+      learning: "Formation CDA*",
+      source: "En entreprise",
+    },
+    {
+      name: "Linux",
+      color: "bg-yellow-500",
+      icon: <FaLinux />,
+      learning: "En autodidacte et formation CDA*",
+      source: "Cours en ligne et école O'Clock",
+    },
+  ];
+
   return (
-    <>
-      <div className="flex gap-2 pt-6 pb-5 w-full justify-center">
-        <Popover placement="bottom">
+    <div className="flex flex-wrap justify-center gap-2 pt-6 pb-5 w-full">
+      {skills.map(({ name, color, icon, learning, source }) => (
+        <Popover key={name} className="relative" placement="bottom">
           <PopoverTrigger>
-            <Button className={"bg-black text-white"}>
-              MacOs
-              <FaApple/>
+            <Button
+              className={`${color} flex items-center gap-2 px-4 py-2 rounded-lg text-white`}
+            >
+              {name} {icon}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">En autodidacte et formation CDA*</div>
-              <div className="text-tiny">Cours en ligne et école O&#39;Clock</div>
-            </div>
+            <div className="text-small font-bold">{learning}</div>
+            <div className="text-tiny">{source}</div>
           </PopoverContent>
         </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button color={"primary"}>
-              Window
-              <FaWindows/>
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">En entreprise</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button className={"bg-yellow-500"}>
-              Linux
-              <FaLinux/>
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">En autodidacte et formation CDA*</div>
-              <div className="text-tiny">Cours en ligne et école O&#39;Clock</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }

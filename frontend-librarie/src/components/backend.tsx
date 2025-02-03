@@ -2,57 +2,50 @@ import { Popover, PopoverContent, PopoverTrigger } from "@heroui/popover";
 import { Button } from "@heroui/button";
 import { BiLogoNodejs } from "react-icons/bi";
 import { SiDjango } from "react-icons/si";
-import { DiPython} from "react-icons/di";
+import { DiPython } from "react-icons/di";
 
 export default function Backend() {
+  const skills = [
+    {
+      name: "Python",
+      color: "bg-blue-500 text-white",
+      icon: <DiPython />,
+      learning: "Formation CDA*",
+      source: "En entreprise",
+    },
+    {
+      name: "Django",
+      color: "bg-green-500",
+      icon: <SiDjango />,
+      learning: "Formation CDA*",
+      source: "En entreprise",
+    },
+    {
+      name: "NodeJS",
+      color: "bg-green-700 text-white",
+      icon: <BiLogoNodejs />,
+      learning: "Formation CDA*",
+      source: "École O'Clock",
+    },
+  ];
+
   return (
-    <>
-      <div className="flex gap-2 pb-5 w-full justify-center">
-        <Popover placement="bottom">
+    <div className="flex flex-wrap justify-center gap-2 pt-6 pb-5 w-full">
+      {skills.map(({ name, color, icon, learning, source }) => (
+        <Popover key={name} className="relative" placement="bottom">
           <PopoverTrigger>
-            <Button className={"bg-blue-500 text-white"}>
-              Python
-              <DiPython />
+            <Button
+              className={`${color} flex items-center gap-2 px-4 py-2 rounded-lg text-white`}
+            >
+              {name} {icon}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">En entreprise</div>
-            </div>
+            <div className="text-small font-bold">{learning}</div>
+            <div className="text-tiny">{source}</div>
           </PopoverContent>
         </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button color={"success"}>
-              Django
-              <SiDjango />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">En entreprise</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button className={"bg-green-700 text-white"}>
-              NodeJS
-              <BiLogoNodejs />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">École O&#39;Clock</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }

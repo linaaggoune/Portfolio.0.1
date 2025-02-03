@@ -1,6 +1,6 @@
 import { Popover, PopoverContent, PopoverTrigger } from "@heroui/popover";
 import { Button } from "@heroui/button";
-import {SiPostgresql} from "react-icons/si";
+import { SiPostgresql } from "react-icons/si";
 
 export default function Database() {
   return (

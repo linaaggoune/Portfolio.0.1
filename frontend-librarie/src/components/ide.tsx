@@ -1,57 +1,50 @@
 import { Popover, PopoverContent, PopoverTrigger } from "@heroui/popover";
 import { Button } from "@heroui/button";
-import {SiPycharm, SiWebstorm} from "react-icons/si";
+import { SiPycharm, SiWebstorm } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 export default function Ide() {
+  const skills = [
+    {
+      name: "Visual Studio Code",
+      color: "bg-blue-500",
+      icon: <VscVscode />,
+      learning: "Autodidacte et Formation CDA*",
+      source: "École O'Clock",
+    },
+    {
+      name: "PyCharm",
+      color: "bg-yellow-400",
+      icon: <SiPycharm />,
+      learning: "Formation CDA*",
+      source: "En entreprise",
+    },
+    {
+      name: "WebStorm",
+      color: "bg-green-500",
+      icon: <SiWebstorm />,
+      learning: "Formation CDA*",
+      source: "En entreprise",
+    },
+  ];
+
   return (
-    <>
-      <div className="flex gap-2 pb-5 w-full justify-center">
-        <Popover placement="bottom">
+    <div className="flex flex-wrap justify-center gap-2 pt-6 pb-5 w-full">
+      {skills.map(({ name, color, icon, learning, source }) => (
+        <Popover key={name} className="relative" placement="bottom">
           <PopoverTrigger>
-            <Button color="primary">
-              Visual Studio Code
-              <VscVscode />
+            <Button
+              className={`${color} flex items-center gap-2 px-4 py-2 rounded-lg text-white`}
+            >
+              {name} {icon}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">
-                Autodidacte et Formation CDA*
-              </div>
-              <div className="text-tiny">École O&#39;Clock</div>
-            </div>
+            <div className="text-small font-bold">{learning}</div>
+            <div className="text-tiny">{source}</div>
           </PopoverContent>
         </Popover>
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button className={"bg-yellow-400 "}>
-              PyCharm
-              <SiPycharm />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">En entreprise</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-        <Popover placement="bottom">
-          <PopoverTrigger>
-            <Button className={"bg-green-200 "}>
-              WebStorm
-              <SiWebstorm />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">En entreprise</div>
-            </div>
-          </PopoverContent>
-        </Popover>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }
