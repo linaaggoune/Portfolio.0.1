@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd frontend-librarie
-          npm ci
+          npm install
 
       - name: Build project
         run: |
