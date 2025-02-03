@@ -7,6 +7,9 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { Button } from "@heroui/button";
 import { useDisclosure } from "@heroui/modal";
 
+import meteoImage from "../assets/image/meteo.png";
+import portfolioImage from "../assets/image/portfolio.png";
+
 import ModalProjectOne from "@/components/modals/modalProjectOne.tsx";
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
@@ -49,7 +52,7 @@ export default function ProjectsPage() {
               <Image
                 alt="Card background"
                 className="object-cover rounded-xl"
-                src="/portfolio.png"
+                src={portfolioImage}
                 width={270}
               />
             </CardBody>
@@ -81,7 +84,7 @@ export default function ProjectsPage() {
               <Image
                 alt="Card background"
                 className="object-cover rounded-xl"
-                src="/meteo-react.png"
+                src={meteoImage}
                 width={270}
               />
             </CardBody>
