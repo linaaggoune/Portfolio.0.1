@@ -14,7 +14,13 @@ export default function IndexPage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-        <div className="inline-block max-w-lg text-center justify-center pt-28">
+        <div
+          className={
+            isDesktopOrLaptop
+              ? "inline-block max-w-lg text-center justify-center pt-20"
+              : "inline-block max-w-lg text-center justify-center"
+          }
+        >
           <span className={title()}>Hello, I&#39;m&nbsp;</span>
           <span className={title({ color: "violet" })}>Aurélie&nbsp;</span>
           <br />

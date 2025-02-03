@@ -10,24 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Étape 1 : Cloner le dépôt
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # Étape 2 : Installer les dépendances (si nécessaire, par ex. pour React ou Next.js)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Install dependencies
         run: |
-          cd /frontend-librairie/
-          npm install
+          cd frontend-librairie
+          npm ci
 
-      # Étape 3 : Construire le projet
-      - name: Build the project
+      - name: Build project
         run: |
+          cd frontend-librairie
           npm run build
 
-      # Étape 4 : Déployer sur GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Chemin vers le dossier contenant les fichiers statiques
+          publish_dir: ./frontend-librairie/dist
+          publish_branch: gh-pages
