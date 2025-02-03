@@ -1,6 +1,7 @@
 import { Image } from "@heroui/image";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
+import monImage from '/about.jpeg'
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
@@ -76,7 +77,7 @@ export default function AboutPage() {
             isBlurred
             alt="NextUI Album Cover"
             className="m-5"
-            src="../../public/about.jpeg"
+            src={monImage}
             width={320}
           />
         </div>
