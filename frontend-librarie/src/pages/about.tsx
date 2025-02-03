@@ -2,7 +2,7 @@ import { Image } from "@heroui/image";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 
-import monImage from "../image/about.jpeg"
+import monImage from "./image/about.jpeg";
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { useMediaQueryPersonnalise } from "@/context/mediaQueryContext.tsx";
