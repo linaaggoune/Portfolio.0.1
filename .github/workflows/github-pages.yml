@@ -1,35 +1,60 @@
-name: Deploy Portfolio to GitHub Pages
+name: Deploy to GitHub Pages
 
+# Trigger the workflow on push to the specified branch or on manual dispatch
 on:
   push:
     branches:
       - master
+  workflow_dispatch:
+
+# Define the permissions needed for the workflow
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
+  # Job to build the project
+  build:
+    runs-on: ubuntu-latest
+    # Set the default working directory
+    defaults:
+      run:
+        working-directory: ./frontend-librarie
+    steps:
+      # Checkout the repository code
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      # Set up the Node.js environment
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
+
+      # Install dependencies using npm ci
+      - name: Install dependencies
+        run: npm install
+
+      # Build the project using npm run build
+      - name: Build the project
+        run: npm run build
+
+      # Upload the built artifact to GitHub Pages
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: ./frontend-librarie/dist
+
+  # Job to deploy the built artifact to GitHub Pages
   deploy:
+    needs: build  # This job depends on the successful completion of the build job
     runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}  # This will be set after deployment
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: |
-          cd frontend-librarie
-          npm install
-
-      - name: Build project
-        run: |
-          cd frontend-librarie
-          npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./frontend-librairie/build
+      # Deploy the uploaded artifact to GitHub Pages
+      - name: Deploy GitHub Pages site
+        id: deployment
+        uses: actions/deploy-pages@v4.0.5
