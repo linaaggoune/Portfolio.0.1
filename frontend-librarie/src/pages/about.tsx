@@ -1,14 +1,14 @@
 import { Image } from "@heroui/image";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
-import monImage from '/about.jpeg'
+
+import monImage from "/about.jpeg";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
-import {useMediaQueryPersonnalise} from "@/context/mediaQueryContext.tsx";
+import { useMediaQueryPersonnalise } from "@/context/mediaQueryContext.tsx";
 
 export default function AboutPage() {
-
   const { isDesktopOrLaptop } = useMediaQueryPersonnalise();
 
   return (
@@ -17,7 +17,13 @@ export default function AboutPage() {
         <div className="inline-block max-w-lg text-center justify-center">
           <h1 className={title()}>À propos</h1>
         </div>
-        <div className={isDesktopOrLaptop ? "flex items-center justify-center gap-20 py-8 md:py-10" : "flex w-full flex-col items-center justify-center gap-20"}>
+        <div
+          className={
+            isDesktopOrLaptop
+              ? "flex items-center justify-center gap-20 py-8 md:py-10"
+              : "flex w-full flex-col items-center justify-center gap-20"
+          }
+        >
           <div className="mt-8 w-1/2">
             <h2 className="text-3xl pb-4">Une nouvelle aventure ...</h2>
             <p className="text-justify pb-4">
