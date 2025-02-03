@@ -28,7 +28,8 @@ jobs:
           cd frontend-librarie
           npm run build
 
-      - name: Deploy 🚀
-          uses: AurelieMous/github-pages-deploy-action@v4
-          with:
-            folder: dist
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./frontend-librairie/build
