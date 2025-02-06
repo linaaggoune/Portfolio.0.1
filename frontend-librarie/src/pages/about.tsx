@@ -3,6 +3,7 @@ import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 
 import monImage from "../assets/image/about.png";
+
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { useMediaQueryPersonnalise } from "@/context/mediaQueryContext.tsx";
@@ -20,10 +21,10 @@ export default function AboutPage() {
           className={
             isDesktopOrLaptop
               ? "flex items-center justify-center gap-20 py-8 md:py-10"
-              : "flex w-full flex-col items-center justify-center gap-20"
+              : "flex w-full flex-col items-center justify-center "
           }
         >
-          <div className="mt-8 w-1/2">
+          <div className={isDesktopOrLaptop ? "mt-8 w-1/2" : "w-full p-8"}>
             <h2 className="text-3xl pb-4">Une nouvelle aventure ...</h2>
             <p className="text-justify pb-4">
               Après cinq années enrichissantes en tant que diététicienne, où
@@ -78,13 +79,22 @@ export default function AboutPage() {
               </Button>
             </div>
           </div>
-          <Image
-            isBlurred
-            alt="NextUI Album Cover"
-            className="m-5"
-            src={monImage}
-            width={320}
-          />
+          {isDesktopOrLaptop ? (
+            <Image
+              isBlurred
+              alt="NextUI Album Cover"
+              className="m-5"
+              src={monImage}
+              width={320}
+            />
+          ) : (
+            <Image
+              isBlurred
+              alt="NextUI Album Cover"
+              src={monImage}
+              width={200}
+            />
+          )}
         </div>
       </section>
     </DefaultLayout>
