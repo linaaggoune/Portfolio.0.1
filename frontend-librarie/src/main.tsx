@@ -7,16 +7,13 @@ import { Provider } from "./provider.tsx";
 
 import "@/styles/globals.css";
 import { MediaQueryProvider } from "@/context/mediaQueryContext.tsx";
-import {HashRouter} from "react-router";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider>
         <MediaQueryProvider>
-            <HashRouter>
-                <App />
-            </HashRouter>
+          <App />
         </MediaQueryProvider>
       </Provider>
     </BrowserRouter>
