@@ -8,10 +8,11 @@ Ce site web minimaliste met en avant les informations les plus importantes conce
 
 - **React** avec **TypeScript** : Pour une meilleure structuration et maintenabilité du code.
 - **HeroUI** : Pour une interface moderne, légère et ergonomique.
+- **Tailwind** : pour une personnalisation rapide et soignée.
 
 ## 🎓 Contexte
 
-Ce projet a été réalisé dans le cadre de ma formation en alternance chez **O'Clock**. Il me permet d'appliquer mes connaissances et d'expérimenter les meilleures pratiques de développement web.
+Ce projet a été réalisé pendant ma formation en alternance chez **O'Clock** de Concepteur Développeur d'Applications. Il me permet d'appliquer mes connaissances et d'expérimenter les meilleures pratiques de développement web.
 
 ## 💡 Fonctionnalités principales
 
@@ -24,9 +25,9 @@ Ce projet a été réalisé dans le cadre de ma formation en alternance chez **O
 
 Si vous souhaitez en savoir plus ou discuter de mon projet, n'hésitez pas à me contacter via :
 
-- **Email** : votre.email@example.com
-- **LinkedIn** : [Votre Profil](https://www.linkedin.com/in/votreprofil)
-- **GitHub** : [Votre GitHub](https://github.com/votre-utilisateur)
+- **Email** : aurelie.moustardier@outlook.fr
+- **LinkedIn** : [Mon Profil](https://www.linkedin.com/in/aur%C3%A9lie-moustardier-7393672b2/)
+- **GitHub** : [Votre GitHub](https://github.com/AurelieMous)
 
 Merci d'avoir visité mon projet ! 🚀
 
