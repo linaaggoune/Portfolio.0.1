@@ -27,7 +27,7 @@ Si vous souhaitez en savoir plus ou discuter de mon projet, n'hésitez pas à me
 
 - **Email** : aurelie.moustardier@outlook.fr
 - **LinkedIn** : [Mon Profil](https://www.linkedin.com/in/aur%C3%A9lie-moustardier-7393672b2/)
-- **GitHub** : [Votre GitHub](https://github.com/AurelieMous)
+- **GitHub** : [Mon GitHub](https://github.com/AurelieMous)
 
 Merci d'avoir visité mon projet ! 🚀
 
