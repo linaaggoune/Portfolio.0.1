@@ -1,34 +1,17 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Aurélie Moustardier - Portfolio",
-  description: "Bienvenu sur mon portfolio.",
+  name: "Lyna Aggoun - Portfolio",
+  description: "bienvenu_message",
   navItems: [
-    {
-      label: "Accueil",
-      href: "/",
-    },
-    {
-      label: "À propos",
-      href: "/about",
-    },
-    {
-      label: "Skills",
-      href: "/skills",
-    },
-    {
-      label: "Mes projets",
-      href: "/projects",
-    },
-    {
-      label: "Contact",
-      href: "/contact",
-    },
-
+    { label: "navbar.Accueil", href: "/" },
+    { label: "navbar.Àpropos", href: "/about" },
+    { label: "navbar.Skills", href: "/skills" },
+    { label: "navbar.Mes_projets", href: "/projects" },
+    { label: "navbar.Contact", href: "/contact" },
   ],
-  navMenuItems: [],
   links: {
-    github: "https://github.com/AurelieMous",
-    linkedin: "https://www.linkedin.com/in/aur%C3%A9lie-moustardier-7393672b2/",
+    github: "https://github.com/linaaggoune",
+    linkedin: "https://www.linkedin.com/in/lina-aggoun-a03b4a183/",
   },
 };

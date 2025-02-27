@@ -2,14 +2,16 @@ import { Link } from "@heroui/link";
 import { button as buttonStyles } from "@heroui/theme";
 import { Button } from "@heroui/button";
 
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
-import DefaultLayout from "@/layouts/default";
-import { useMediaQueryPersonnalise } from "@/context/mediaQueryContext";
+import { siteConfig } from "../config/site";
+import { title, subtitle } from "../components/primitives";
+import { GithubIcon } from "../components/icons";
+import DefaultLayout from "../layouts/default";
+import { useMediaQueryPersonnalise } from "../context/mediaQueryContext";
+import { useTranslation } from "react-i18next";
 
 export default function IndexPage() {
   const { isDesktopOrLaptop } = useMediaQueryPersonnalise();
+  const { t } = useTranslation();
 
   return (
     <DefaultLayout>
@@ -21,11 +23,16 @@ export default function IndexPage() {
               : "inline-block max-w-lg text-center justify-center"
           }
         >
-          <span className={title()}>Hello, I&#39;m&nbsp;</span>
-          <span className={title({ color: "violet" })}>Aurélie&nbsp;</span>
+          <span className={title()}>
+            {t("index.welcome")} , {t("index.I'm")}&#39;&nbsp;
+          </span>
+
+          <span className={title({ color: "violet" })}>
+            {t("index.Lyna")}&nbsp;
+          </span>
           <br />
           <span className={title()}>
-            a
+            {t("index.a")}
             <Link
               color="foreground"
               href="/skills/"
@@ -37,13 +44,12 @@ export default function IndexPage() {
                 textDecoration: "underline",
               }}
             >
-              full-stack
+              {t("index.frontend")}
             </Link>
-            developer
+            {t("index.developer")}
           </span>
           <div className={subtitle({ class: "mt-4 pt-10" })}>
-            En alternance pour Concepteur Développeur d&#39;Application
-            jusqu&#39;en juillet 2026.
+            {t("index.Passionate")}
           </div>
         </div>
 
@@ -53,17 +59,17 @@ export default function IndexPage() {
           }
         >
           <Button as={Link} color="secondary" href="/about/" variant="ghost">
-            A propos
+            {t("index.Àpropos")}
           </Button>
           <Button
             showAnchorIcon
             as={Link}
             color="secondary"
-            href="https://oclock.io/formations/cda-alternance"
+            href="https://www.esi-sba.dz/fr/"
             target="_blank"
             variant="solid"
           >
-            Ma formation
+            {t("index.Maformation")}
           </Button>
           <Link
             isExternal
@@ -71,7 +77,7 @@ export default function IndexPage() {
             href={siteConfig.links.github}
           >
             <GithubIcon size={20} />
-            GitHub
+            {t("index.GitHub")}
           </Link>
         </div>
       </section>

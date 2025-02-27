@@ -10,14 +10,18 @@ import {
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 import { FaLinkedin } from "react-icons/fa";
-
-import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon } from "@/components/icons";
-import { useMediaQueryPersonnalise } from "@/context/mediaQueryContext.tsx";
+import { Switch } from "@heroui/switch";
+import { siteConfig } from "../config/site";
+import { ThemeSwitch } from "../components/theme-switch";
+import { GithubIcon, LanguageIcon } from "../components/icons";
+import { useMediaQueryPersonnalise } from "../context/mediaQueryContext.tsx";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "./LanguageSwitcher.tsx";
 
 export const Navbar = () => {
   const { isTabletOrMobile } = useMediaQueryPersonnalise(); // Détecte mobile/tablette
+  const { i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -32,12 +36,12 @@ export const Navbar = () => {
               <Link
                 className={clsx(
                   linkStyles({ color: "secondary", underline: "hover" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "data-[active=true]:text-primary data-[active=true]:font-medium"
                 )}
                 color="foreground"
                 href={item.href}
               >
-                {item.label}
+                {t(item.label)}
               </Link>
             </NavbarItem>
           ))}
@@ -56,7 +60,9 @@ export const Navbar = () => {
           <Link isExternal href={siteConfig.links.github} title="GitHub">
             <GithubIcon className="text-default-500 text-2xl" />
           </Link>
+
           <ThemeSwitch />
+          <LanguageSwitcher />
         </NavbarItem>
       </NavbarContent>
 
@@ -70,6 +76,7 @@ export const Navbar = () => {
             <GithubIcon className="text-default-500" />
           </Link>
           <ThemeSwitch />
+          <LanguageSwitcher />
           <NavbarMenuToggle aria-label="Toggle navigation" />
         </NavbarContent>
       )}
@@ -81,7 +88,7 @@ export const Navbar = () => {
             <Link
               className={clsx(
                 linkStyles({ color: "secondary" }),
-                "block px-4 py-2",
+                "block px-4 py-2"
               )}
               href={item.href}
             >

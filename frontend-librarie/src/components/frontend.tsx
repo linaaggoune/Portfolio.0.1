@@ -3,7 +3,8 @@ import { Button } from "@heroui/button";
 import { FaHtml5 } from "react-icons/fa";
 import { BiLogoCss3, BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { IoLogoReact } from "react-icons/io5";
-import { SiSass, SiTailwindcss } from "react-icons/si";
+
+import { SiAntdesign, SiTailwindcss } from "react-icons/si";
 import { DiBootstrap } from "react-icons/di";
 
 export default function FrontEnd() {
@@ -14,6 +15,7 @@ export default function FrontEnd() {
       icon: <FaHtml5 />,
       learning: "En autodidacte",
       source: "Cours en ligne",
+      proficiency: 90,
     },
     {
       name: "CSS3",
@@ -21,6 +23,7 @@ export default function FrontEnd() {
       icon: <BiLogoCss3 />,
       learning: "En autodidacte",
       source: "Cours en ligne",
+      proficiency: 85,
     },
     {
       name: "JavaScript",
@@ -33,36 +36,36 @@ export default function FrontEnd() {
       name: "React",
       color: "bg-blue-400",
       icon: <IoLogoReact />,
-      learning: "Formation CDA*",
-      source: "École O'Clock",
+      learning: "En autodidacte",
+      source: "Cours en ligne",
     },
     {
       name: "TypeScript",
       color: "bg-blue-600",
       icon: <BiLogoTypescript />,
-      learning: "Formation CDA*",
-      source: "École O'Clock / En entreprise",
+      learning: "En autodidacte",
+      source: "Cours en ligne",
     },
     {
-      name: "Sass",
+      name: "Ant Design",
       color: "bg-pink-500 text-white",
-      icon: <SiSass />,
-      learning: "Formation CDA*",
-      source: "École O'Clock",
+      icon: <SiAntdesign />,
+      learning: "En autodidacte",
+      source: "Cours en ligne",
     },
     {
       name: "Bootstrap",
       color: "bg-purple-500",
       icon: <DiBootstrap />,
-      learning: "Formation CDA*",
-      source: "En entreprise",
+      learning: "En autodidacte",
+      source: "Cours en ligne",
     },
     {
       name: "Tailwind",
       color: "bg-teal-500",
       icon: <SiTailwindcss />,
-      learning: "Formation CDA*",
-      source: "École O'Clock",
+      learning: "En autodidacte",
+      source: "Cours en ligne",
     },
   ];
 
@@ -72,7 +75,7 @@ export default function FrontEnd() {
         <Popover key={name} className="relative" placement="bottom">
           <PopoverTrigger>
             <Button
-              className={`${color} flex items-center gap-2 px-4 py-2 rounded-lg text-white`}
+              className={`${color} skill-button flex items-center gap-2 px-4 py-2 rounded-lg text-white`}
             >
               {name} {icon}
             </Button>

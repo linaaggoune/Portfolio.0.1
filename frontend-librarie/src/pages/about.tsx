@@ -1,21 +1,21 @@
 import { Image } from "@heroui/image";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
-
-import monImage from "../assets/image/about.png";
-
-import DefaultLayout from "@/layouts/default";
-import { title } from "@/components/primitives";
-import { useMediaQueryPersonnalise } from "@/context/mediaQueryContext.tsx";
+import monImage from "../assets/image/about.jpg";
+import DefaultLayout from "../layouts/default";
+import { title } from "../components/primitives";
+import { useMediaQueryPersonnalise } from "../context/mediaQueryContext.tsx";
+import { useTranslation } from "react-i18next";
 
 export default function AboutPage() {
   const { isDesktopOrLaptop } = useMediaQueryPersonnalise();
+  const { t } = useTranslation();
 
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center md:py-3">
         <div className="inline-block max-w-lg text-center justify-center">
-          <h1 className={title()}>À propos</h1>
+          <h1 className={title()}>{t("index.Àpropos")}</h1>
         </div>
         <div
           className={
@@ -25,41 +25,10 @@ export default function AboutPage() {
           }
         >
           <div className={isDesktopOrLaptop ? "mt-8 w-1/2" : "w-full p-8"}>
-            <h2 className="text-3xl pb-4">Une nouvelle aventure ...</h2>
-            <p className="text-justify pb-4">
-              Après cinq années enrichissantes en tant que diététicienne, où
-              j’ai pu accompagner de nombreuses personnes dans leur bien-être,
-              j’ai découvert une{" "}
-              <span className="font-bold">
-                une nouvelle passion : le développement web
-              </span>{" "}
-              . Cette révélation m&#39;a conduite à réorienter ma carrière vers
-              le domaine du numérique, un secteur en constante évolution, qui
-              correspond à ma curiosité et à mon goût pour les nouvelles
-              technologies.
-            </p>
-            <p className="text-justify pb-4">
-              Actuellement en formation pour obtenir un titre professionnel
-              équivalent bac+4 en
-              <span className="font-bold">
-                {" "}
-                Conception et développement d&#39;applications
-              </span>
-              , je poursuis cet objectif en alternance chez
-              <span className="font-bold"> Filieris</span>, au sein de la DSI
-              d&#39;Alès, où je suis engagée jusqu’en juillet 2026. Cette
-              opportunité me permet de combiner apprentissage théorique et
-              pratique tout en contribuant à des projets concrets au sein d’une
-              équipe dynamique.
-            </p>
-            <p className="text-justify pb-4 italic">
-              ＂Je suis particulièrement motivée par les défis qu’offre cette
-              reconversion. Mon esprit créatif et mon approche analytique,
-              développés au fil de ma première carrière, me poussent à innover
-              dans la conception de solutions web. Je suis impatiente de
-              contribuer à des projets ambitieux tout en continuant à me
-              perfectionner dans ce domaine.＂
-            </p>
+            <h2 className="text-3xl pb-4">{t("about.title")}</h2>
+            <p className="text-justify pb-4">{t("about.paragraph1")}</p>
+            <p className="text-justify pb-4">{t("about.paragraph2")}</p>
+            <p className="text-justify pb-4 italic">{t("about.paragraph3")}</p>
             <div className="flex gap-10 pt-3 justify-center">
               <Button
                 as={Link}
@@ -67,7 +36,7 @@ export default function AboutPage() {
                 href="/skills/"
                 variant="solid"
               >
-                Mes Skills
+                {t("about.mes_skills")}
               </Button>
               <Button
                 as={Link}
@@ -75,7 +44,7 @@ export default function AboutPage() {
                 href="/projects/"
                 variant="solid"
               >
-                Mes projets
+                {t("about.mes_projets")}
               </Button>
             </div>
           </div>
@@ -83,7 +52,7 @@ export default function AboutPage() {
             <Image
               isBlurred
               alt="NextUI Album Cover"
-              className="m-5"
+              className="m-9"
               src={monImage}
               width={320}
             />

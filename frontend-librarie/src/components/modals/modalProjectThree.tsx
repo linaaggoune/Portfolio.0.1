@@ -1,5 +1,12 @@
-import {Modal, ModalBody, ModalContent, ModalFooter, ModalHeader} from "@heroui/modal";
-import {Button} from "@heroui/button";
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+} from "@heroui/modal";
+import { Button } from "@heroui/button";
+import { useTranslation } from "react-i18next";
 
 interface IModalProject {
   isOpen: boolean;
@@ -7,22 +14,22 @@ interface IModalProject {
 }
 
 const ModalProjectTwo: React.FC<IModalProject> = ({ isOpen, onOpenChange }) => {
+  const { t } = useTranslation();
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
       <ModalContent>
         {(onClose) => (
           <>
             <ModalHeader className="flex flex-col gap-1">
-              En cours
+              {t("project.MegaERPpending")}
             </ModalHeader>
             <ModalBody>
-              <p>
-                A venir prochainement...
-              </p>
+              <p>{t("project.MegaERPDescriptionP1")}</p>
+              <p>{t("project.MegaERPDescriptionP2")}</p>
             </ModalBody>
             <ModalFooter>
               <Button color="danger" variant="light" onPress={onClose}>
-                Fermer
+                {t("project.Fermer")}
               </Button>
             </ModalFooter>
           </>

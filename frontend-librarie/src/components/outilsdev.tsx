@@ -2,13 +2,22 @@ import { Popover, PopoverContent, PopoverTrigger } from "@heroui/popover";
 import { Button } from "@heroui/button";
 import { FaDocker } from "react-icons/fa";
 import { SiGithubactions } from "react-icons/si";
+import { SiSwagger } from "react-icons/si";
+import { SiPostman } from "react-icons/si";
 
 export default function Outilsdev() {
   const skills = [
     {
-      name: "Docker",
+      name: "Swagger",
+      color: "bg-blue-400",
+      icon: <SiSwagger />,
+      learning: "Formation CDA*",
+      source: "École O'Clock",
+    },
+    {
+      name: "Postman ",
       color: "bg-blue-500",
-      icon: <FaDocker />,
+      icon: <SiPostman />,
       learning: "Formation CDA*",
       source: "École O'Clock",
     },

@@ -5,13 +5,6 @@ import { FaApple, FaLinux, FaWindows } from "react-icons/fa";
 export default function System() {
   const skills = [
     {
-      name: "MacOS",
-      color: "bg-black text-white",
-      icon: <FaApple />,
-      learning: "En autodidacte et formation CDA*",
-      source: "École O'Clock",
-    },
-    {
       name: "Windows",
       color: "bg-blue-500 text-white",
       icon: <FaWindows />,

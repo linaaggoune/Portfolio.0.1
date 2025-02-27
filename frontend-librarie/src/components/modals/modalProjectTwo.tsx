@@ -9,7 +9,8 @@ import { Button } from "@heroui/button";
 import { button as buttonStyles } from "@heroui/theme";
 import { Link } from "@heroui/link";
 
-import { GithubIcon } from "@/components/icons.tsx";
+import { GithubIcon } from "../icons.tsx";
+import { useTranslation } from "react-i18next";
 
 interface IModalProject {
   isOpen: boolean;
@@ -17,25 +18,19 @@ interface IModalProject {
 }
 
 const ModalProjectTwo: React.FC<IModalProject> = ({ isOpen, onOpenChange }) => {
+  const { t } = useTranslation();
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalHeader className="flex flex-col gap-1">Météo</ModalHeader>
+            <ModalHeader className="flex flex-col gap-1">
+              {t("project.Facemeet")}
+            </ModalHeader>
             <ModalBody className="text-justify">
-              <p>
-                Utilisation de l&#39;API météo api.openweathermap, avec une clé
-                API stockée dans une variable dans un fichier de variables
-                d&#39;environnement. Ce projet a été initialement réalisé en
-                JavaScript au début de l&#39;année 2024, dans le cadre de mon
-                apprentissage autodidacte de ce langage. Il a ensuite été mis à
-                jour.
-              </p>
-              <p>
-                Mise en pratique de mes connaissances acquises pendant ma
-                formation en cours de Développeur Concepteur d&#39;Application.
-              </p>
+              <p>{t("project.FacemeetDescriptionP1")}</p>
+              <p>{t("project.FacemeetDescriptionP2")}</p>
+              <p>{t("project.FacemeetDescriptionP3")}</p>
             </ModalBody>
             <ModalFooter>
               <Link
@@ -47,10 +42,10 @@ const ModalProjectTwo: React.FC<IModalProject> = ({ isOpen, onOpenChange }) => {
                 href={"https://github.com/AurelieMous/weather-api-react"}
               >
                 <GithubIcon size={20} />
-                Mon repo
+                {t("project.MonRepo")}
               </Link>
               <Button color="danger" variant="light" onPress={onClose}>
-                Fermer
+                {t("project.Fermer")}
               </Button>
             </ModalFooter>
           </>

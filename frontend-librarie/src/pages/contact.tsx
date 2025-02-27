@@ -3,12 +3,13 @@ import { Form } from "@heroui/form";
 import { Input, Textarea } from "@heroui/input";
 import { useState } from "react";
 
-import DefaultLayout from "@/layouts/default";
-import { title } from "@/components/primitives";
-import SuccessAlert from "@/components/alert.tsx";
-
+import DefaultLayout from "../layouts/default";
+import { title } from "../components/primitives";
+import SuccessAlert from "../components/alert.tsx";
+import emailjs from "emailjs-com";
+import { useTranslation } from "react-i18next";
 export default function ContactPage() {
-
+  const { t } = useTranslation();
   // récupérer les données du form
   const [formData, setFormData] = useState({
     nom: "",
@@ -18,11 +19,11 @@ export default function ContactPage() {
   });
 
   const [alert, setAlert] = useState<{ message: string; type: string } | null>(
-      null
+    null
   );
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
 
@@ -32,20 +33,25 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSendEmail = () => {
-    const { nom, email, socity, message } = formData;
-
-    const mailtoLink = `mailto:aurelie.moustardier@outlook.fr?subject=Contact depuis le site&body=Nom: ${nom}%0D%0AEmail: ${email}%0D%0ASociété: ${socity}%0D%0AMessage: ${encodeURIComponent(
-      message,
-    )}`;
-
-    // ajoute une alerte
-    setAlert({ message: "Merci pour votre message !", type: "Envoi réussi," });
-
-    // Ouvre le client de messagerie
-    window.location.href = mailtoLink;
-    resetForm()
-
+  const handleSendEmail = async () => {
+    try {
+      const response = await emailjs.send(
+        "service_269egr9",
+        "template_28oaura",
+        {
+          nom: formData.nom,
+          email: formData.email,
+          socity: formData.socity,
+          message: formData.message,
+        },
+        "H5m61GC81EgRYYVUs"
+      );
+      setAlert({ message: t("contact.successMessage"), type: "success" });
+      resetForm();
+    } catch (error) {
+      console.error("Email error:", error);
+      setAlert({ message: "Erreur d'envoi", type: "error" });
+    }
   };
 
   // Fonction qui permet de vider les champs du formulaire
@@ -63,7 +69,7 @@ export default function ContactPage() {
       {alert && <SuccessAlert message={alert.message} type={alert.type} />}
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-lg text-center justify-center">
-          <h1 className={title()}>Me contacter</h1>
+          <h1 className={title()}>{t("contact.me_contacter")}</h1>
         </div>
         <Form
           className="w-full max-w-xs flex flex-col items-center justify-center"
@@ -76,7 +82,8 @@ export default function ContactPage() {
           <div className="flex flex-col w-full flex-wrap md:flex-nowrap gap-8 pb-8">
             <Input
               isRequired
-              label="Nom"
+              errorMessage={t("contact.requiredMsg")}
+              label={t("contact.Nom")}
               name="nom"
               type="text"
               value={formData.nom}
@@ -84,15 +91,15 @@ export default function ContactPage() {
             />
             <Input
               isRequired
-              errorMessage="Merci de noter une adresse mail valide"
-              label="Email"
+              errorMessage={t("contact.emailerrorMessage")}
+              label={t("contact.Email")}
               name="email"
               type="email"
               value={formData.email}
               onChange={handleChange}
             />
             <Input
-              label="Société"
+              label={t("contact.Société")}
               name="socity"
               type="text"
               value={formData.socity}
@@ -100,16 +107,17 @@ export default function ContactPage() {
             />
             <Textarea
               isRequired
-              label="Message"
+              errorMessage={t("contact.requiredMsg")}
+              label={t("contact.Message")}
               name="message"
-              placeholder="Entrez votre message..."
+              placeholder={t("contact.messagePlaceholder")}
               rows={4}
               value={formData.message}
               onChange={handleChange}
             />
           </div>
           <Button color="secondary" size="lg" type="submit" variant="ghost">
-            Envoyer
+            {t("contact.Envoyer")}
           </Button>
         </Form>
       </section>

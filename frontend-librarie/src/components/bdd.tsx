@@ -15,8 +15,23 @@ export default function Database() {
           </PopoverTrigger>
           <PopoverContent>
             <div className="px-1 py-2">
-              <div className="text-small font-bold">Formation CDA*</div>
-              <div className="text-tiny">En entreprise</div>
+              <div className="text-small font-bold">En autodidacte</div>
+              <div className="text-tiny">Cours en ligne</div>
+              <div className="text-tiny">École O&#39;Clock</div>
+            </div>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="bottom">
+          <PopoverTrigger>
+            <Button className={"bg-blue-950 text-white"}>
+              PostgreSQL
+              <SiPostgresql />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <div className="px-1 py-2">
+              <div className="text-small font-bold">En autodidacte</div>
+              <div className="text-tiny">Cours en ligne</div>
               <div className="text-tiny">École O&#39;Clock</div>
             </div>
           </PopoverContent>

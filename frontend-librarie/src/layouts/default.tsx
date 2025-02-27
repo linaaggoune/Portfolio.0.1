@@ -1,5 +1,6 @@
-import { Navbar } from "@/components/navbar";
-import { useMediaQueryPersonnalise } from "@/context/mediaQueryContext.tsx";
+import { useTranslation } from "react-i18next";
+import { Navbar } from "../components/navbar";
+import { useMediaQueryPersonnalise } from "../context/mediaQueryContext.tsx";
 
 export default function DefaultLayout({
   children,
@@ -7,7 +8,7 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   const { isDesktopOrLaptop } = useMediaQueryPersonnalise();
-
+  const { t } = useTranslation();
   return (
     <div className="relative flex flex-col h-screen">
       <Navbar />
@@ -21,17 +22,17 @@ export default function DefaultLayout({
           </span>
           <span className={isDesktopOrLaptop ? "text-default-600" : "text-xs"}>
             {" "}
-            - Crée par
+            {t("footer.creerpar")}
           </span>
           <p
             className={
               isDesktopOrLaptop ? "text-secondary" : "text-secondary text-xs"
             }
           >
-            Aurélie Moustardier
+            {t("footer.lynaaggoun")}
           </p>
           <p className={isDesktopOrLaptop ? "text-default-600" : "text-xs"}>
-            tout droits réservés.
+            {t("footer.tousdroitsreserves")}
           </p>
         </span>
       </footer>

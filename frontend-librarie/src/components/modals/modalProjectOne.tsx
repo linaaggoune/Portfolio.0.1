@@ -8,7 +8,8 @@ import {
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { button as buttonStyles } from "@heroui/theme";
-import { GithubIcon } from "@/components/icons.tsx";
+import { GithubIcon } from "../icons";
+import { useTranslation } from "react-i18next";
 
 interface IModalProject {
   isOpen: boolean; // Renommé de isOpenModal1
@@ -16,22 +17,19 @@ interface IModalProject {
 }
 
 const ModalProjectOne: React.FC<IModalProject> = ({ isOpen, onOpenChange }) => {
+  const { t } = useTranslation();
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalHeader className="flex flex-col gap-1">Portfolio</ModalHeader>
+            <ModalHeader className="flex flex-col gap-1">
+              {t("project.Portfolio")}
+            </ModalHeader>
             <ModalBody className="text-justify">
-              <p>
-                Réalisé avec React et TypeScript, en mettant à profit les connaissances acquises lors de ma formation de Concepteur Développeur d&#39;Application.
-              </p>
-              <p>
-                Mise en place également d&#39;un workflow à l&#39;aide de GitHub Actions afin de bénéficier d&#39;une intégration et d&#39;un déploiement continus.
-              </p>
-              <p>
-                Utilisation de HeroUi pour l&#39;interface utilisateur du projet.
-              </p>
+              <p>{t("project.PortfolioDescriptionP1")}</p>
+              <p>{t("project.PortfolioDescriptionP2")}</p>
+              <p>{t("project.PortfolioDescriptionP3")}</p>
             </ModalBody>
             <ModalFooter>
               <Link
@@ -43,10 +41,10 @@ const ModalProjectOne: React.FC<IModalProject> = ({ isOpen, onOpenChange }) => {
                 href={"https://github.com/AurelieMous/portfolio-react"}
               >
                 <GithubIcon size={20} />
-                Mon repo
+                {t("project.MonRepo")}
               </Link>
               <Button color="danger" variant="light" onPress={onClose}>
-                Fermer
+                {t("project.Fermer")}
               </Button>
             </ModalFooter>
           </>

@@ -10,22 +10,22 @@ export default function Backend() {
       name: "Python",
       color: "bg-blue-500 text-white",
       icon: <DiPython />,
-      learning: "Formation CDA*",
-      source: "En entreprise",
+      learning: "En autodidacte",
+      source: "Cours en ligne",
     },
     {
       name: "Django",
       color: "bg-green-500",
       icon: <SiDjango />,
-      learning: "Formation CDA*",
-      source: "En entreprise",
+      learning: "En autodidacte",
+      source: "Cours en ligne",
     },
     {
       name: "NodeJS",
       color: "bg-green-700 text-white",
       icon: <BiLogoNodejs />,
-      learning: "Formation CDA*",
-      source: "École O'Clock",
+      learning: "En autodidacte",
+      source: "Cours en ligne",
     },
   ];
 
@@ -35,7 +35,7 @@ export default function Backend() {
         <Popover key={name} className="relative" placement="bottom">
           <PopoverTrigger>
             <Button
-              className={`${color} flex items-center gap-2 px-4 py-2 rounded-lg text-white`}
+              className={`${color}  flex items-center gap-2 px-4 py-2 rounded-lg text-white`}
             >
               {name} {icon}
             </Button>
